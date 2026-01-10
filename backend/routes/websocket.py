@@ -71,7 +71,7 @@ async def websocket_endpoint(websocket: WebSocket, client_id: str):
                 text, confidence = speech_processor.process_audio_chunk(audio_data)
                 
                 if text:
-                    # Send transcription to client (for display only)
+                    # Send transcription to client (for display only) 
                     await manager.send_message(client_id, {
                         'type': 'transcription',
                         'text': text,
@@ -83,7 +83,7 @@ async def websocket_endpoint(websocket: WebSocket, client_id: str):
                     await process_potential_question(client_id, text, confidence)
             
             elif message_type == 'transcription':
-                # Direct transcription from client
+                # Direct transcription from client 
                 text = data.get('text', '')
                 is_final = data.get('is_final', False)
                 
@@ -91,7 +91,7 @@ async def websocket_endpoint(websocket: WebSocket, client_id: str):
                     await process_potential_question(client_id, text, 0.85)
             
             elif message_type == 'context':
-                # User uploaded context
+                # User uploaded context data
                 content = data.get('content', '')
                 source = data.get('source', 'user_upload')
                 context_manager.add_context(content, source)
@@ -103,7 +103,7 @@ async def websocket_endpoint(websocket: WebSocket, client_id: str):
                 })
             
             elif message_type == 'clear_history':
-                # Clear conversation history
+                # Clear conversation history and context
                 openai_service.clear_context()
                 context_manager.clear_all()
                 
@@ -120,7 +120,7 @@ async def websocket_endpoint(websocket: WebSocket, client_id: str):
 
 async def process_potential_question(client_id: str, text: str, confidence: float):
     """
-    Process text to detect questions and generate responses.
+    Process text to detect questions and generate responses
     Only responds when confident it's a direct question.
     """
     
