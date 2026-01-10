@@ -272,3 +272,10 @@ st.markdown("""
 - "The weather is nice today" → ❌ No response (statement)
 - "What time is it?" → ✅ AI responds: "3:45 PM"
 """)
+
+
+
+
+
+# st.markdown("© 2024 AI Earbud Assistant")
+# st.markdown("Developed by OpenAI")
