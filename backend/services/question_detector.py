@@ -93,3 +93,36 @@ class QuestionDetector:
         fillers = [r'^um', r'^uh', r'^hmm', r'^ah', r'^oh', r'^well']
         text_lower = text.lower().strip()
         return any(re.match(f, text_lower) for f in fillers) and len(text_lower.split()) < 3
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
