@@ -34,3 +34,5 @@ class ConversationEntry(BaseModel):
     answer: str
     timestamp: datetime
     audio_url: Optional[str] = None
+
+    
