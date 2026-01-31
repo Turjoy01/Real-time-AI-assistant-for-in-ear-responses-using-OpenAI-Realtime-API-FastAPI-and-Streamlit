@@ -83,3 +83,23 @@ class SpeechProcessor:
         
         # Simple threshold-based detection
         return energy > 0.01
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
